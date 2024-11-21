@@ -1,0 +1,176 @@
+/*---------------- Element --------------*/
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+  margin: 0px;
+  overflow-x:hidden;
+}
+
+ul {
+    margin: 0;
+    padding: 2px;
+}
+
+li {
+    list-style-type: none;
+}
+
+/*---------------- Layout --------------*/
+.container {
+    display: flex;
+    height: 100vh;
+    margin: 0px;
+}
+
+
+.subjects {
+    width: 200px;
+    background-color: #f0f0f0;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    padding: 20px;
+    height: calc(100% - 40px);
+    margin: 0px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.cards {
+    flex: 1;
+    padding: 15px;
+}
+
+.status-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f0f0f0;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px -1px 8px 0px;
+    text-align: center;
+    height: 20px;
+}
+
+/*---------------- Subject List --------------*/
+.subject-item {
+    appearance: button;
+    backface-visibility: hidden;
+    background-color: #405cf5;
+    border-radius: 6px;
+    border-width: 0;
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-family: -apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif;
+    font-size: 100%;
+    height: 44px;
+    vertical-align: center;
+    text-align: center;
+    margin: 2px;
+    outline: none;
+    overflow: hidden;
+    padding: 10px;
+    position: relative;
+    text-transform: none;
+    transform: translateZ(0);
+    transition: all .2s,box-shadow .08s ease-in;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 100%;
+}
+
+.subject-item:disabled {
+  cursor: default;
+}
+
+.subject-item:focus {
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+}
+
+.subject-item:hover {
+    background-color: #607bff;
+}
+
+/*---------------- New Subject --------------*/
+.input-subject {
+    border-radius: 20px;
+    top: 5px;
+    bottom: 10px;
+    height: 30px;
+    text-align: center;
+}
+
+/*---------------- Card --------------*/
+.card {
+    height: 40px;
+    padding: 5px 0px;
+}
+
+.card-front, .card-back {
+    display: flex;
+    backface-visibility: hidden;
+    background-color: #405cf5;
+    color: #fff;
+    height: 30px;
+    position: fixed;
+    width: calc(100% - 240px - 40px);
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+#card-list {
+    background-color: #fff;
+}
+
+.card-front {
+    transform: rotateY(0deg);
+}
+
+.card-front:hover {
+    background-color: gray;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.card.flipped .card-front {
+    transform: rotateY(180deg);
+}
+
+.card.flipped .card-back {
+    transform: rotateY(0deg);
+}
+
+/*------------ Add New Card -----------*/
+.new-card {
+    position: fixed;
+    bottom: 90px;
+    border-radius: 20px;
+    left: 240px;
+    width: calc(100% - 240px);
+    color: white;
+    background-color: blue;
+}
+
+.new-card-input {
+    position: fixed;
+    left: 240px;
+    width: calc(100% - 250px);
+    background-color: #f0f0f0;
+}
+
+.front {
+    bottom: 60px;
+}
+
+.back {
+    bottom: 30px;
+}
